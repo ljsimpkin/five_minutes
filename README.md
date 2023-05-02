@@ -1,24 +1,77 @@
-# README
+# Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[project.com](https://project.com)
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+```shell
+git clone git@github.com:juliendargelos/project.git
+cd project
+```
 
-* Configuration
+### Check your Ruby version
 
-* Database creation
+```shell
+ruby -v
+```
 
-* Database initialization
+### Install dependencies
 
-* How to run the test suite
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+bundle && yarn
+```
 
-* Deployment instructions
+### Set environment variables
 
-* ...
+Using [Figaro](https://github.com/laserlemon/figaro):
+
+See [config/application.yml.sample](https://github.com/juliendargelos/project/blob/master/config/application.yml.sample) and contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
+
+### Initialize the database
+
+```shell
+rails db:create db:migrate db:seed
+```
+
+### Add heroku remotes
+
+Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):
+
+```shell
+heroku git:remote -a project
+heroku git:remote --remote heroku-staging -a project-staging
+```
+
+## Serve
+
+```shell
+rails s
+```
+
+## Deploy
+
+### With Heroku pipeline (recommended)
+
+Push to Heroku staging remote:
+
+```shell
+git push heroku-staging
+```
+
+Go to the Heroku Dashboard and [promote the app to production](https://devcenter.heroku.com/articles/pipelines) or use Heroku CLI:
+
+```shell
+heroku pipelines:promote -a project-staging
+```
+
+### Directly to production (not recommended)
+
+Push to Heroku production remote:
+
+```shell
+git push heroku
+```
