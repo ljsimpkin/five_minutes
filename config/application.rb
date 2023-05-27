@@ -18,5 +18,11 @@ module FiveMinutes
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-  end
+   
+   # config.web_console.permissions = '192.168.68.51'
+   config.hosts << "simpkin.tplinkdns.com"
+   config.hosts << "192.168.68.51"
+   config.hosts << "47.72.169.247"
+   config.secret_key_base = "65ed70d056a20ef8797188de1fcdfc1021204b86ac9538d8fa5a0d6d14a7d6d9ba15e6d9236359c4a470add9d1ce1fb02a7b3d8020e407d7bebb444f4e63de51"
+ end
 end
