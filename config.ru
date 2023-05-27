@@ -4,3 +4,7 @@ require_relative "config/environment"
 
 run Rails.application
 Rails.application.load_server
+ 
+map "#{ENV['PATH_PREFIX']}" do
+  run Rails.application
+end
