@@ -18,5 +18,7 @@ module FiveMinutes
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.relative_url_root = "#{ENV['FIVE_PATH_PREFIX']}"
   end
 end
