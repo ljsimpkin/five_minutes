@@ -75,3 +75,8 @@ Push to Heroku production remote:
 ```shell
 git push heroku
 ```
+
+# Docker start
+
+docker build -t my-ruby-app .
+docker run --detach -p 9000:3000 my-ruby-app
